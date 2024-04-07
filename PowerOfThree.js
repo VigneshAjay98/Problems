@@ -25,9 +25,16 @@ Constraints:
 */
 
 var isPowerOfThree = function(n) {
-    if (n <= 0) return false; // O(1) { Base Case }
-    if ( n % 3 == 0) return true; // O(1) { Base Case: Operation }
-    return isPowerOfThree(n/3);
+    if (n <= 0) return false;
+    if (n === 1) return true;
+    
+    function helperRecursion(val) {
+        if (val === 1) return true;
+        if(val < 3) return false;
+        return helperRecursion(val/3);
+    }
+
+    return helperRecursion(n/3);
 };
 
 console.log(isPowerOfThree(0));

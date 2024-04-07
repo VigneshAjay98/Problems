@@ -25,7 +25,7 @@ Constraints:
 */
 
 var isPowerOfTwo = function(n) {
-    if(n === 0) return false // O(1) { Base Case }
+    if(n <= 0) return false // O(1) { Base Case }
     if(n === 1) return true // O(1) { Base Case }
     if(n % 2 !== 0) return false // O(1) { Base Case: Operation }
     return isPowerOfTwo(n/2)

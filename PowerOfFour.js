@@ -22,9 +22,16 @@ Constraints:
 */
 
 var isPowerOfFour = function(n) {
-    if (n === 1 || (n % 4 === 0)) return true; // O(1) { Base Case }
-    if (n % 4 !== 0) return false; // O(1) { Base Case: Operation }
-    return isPowerOfFour(n/4);
+    if (n === 1) return true;
+    if (n < 1) return false;
+    
+    const helperRecursion = val => {
+        if(val === 1) return true;
+        if(val < 4) return false;
+        
+        return helperRecursion(val/4)
+    }
+    return helperRecursion(n)
 };
 
 console.log(isPowerOfFour(16));
