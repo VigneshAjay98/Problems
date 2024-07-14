@@ -13,8 +13,8 @@ Explanation:
 */
 
 var factorial = function(n) {
-    if ( n === 0 ) return 1; // Factorial of 0 is 0
+    if ( n === 0 ) return 1; // Factorial of 0 is 1
     return n * factorial(n - 1);
 };
 
-console.log(factorial(5));
+console.log(factorial(0));
